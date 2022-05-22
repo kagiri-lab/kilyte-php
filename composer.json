@@ -1,0 +1,17 @@
+{
+    "name": "kagiri/kilyte-php",
+    "authors": [
+        {
+            "name": "Kagiri",
+            "email": "kagiri@kagiri.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "."
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
