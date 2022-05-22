@@ -2,9 +2,9 @@
 
 namespace app\models;
 
-use kilyte\core;
-use kilyte\core\Application;
-use kilyte\core\Model;
+use kilyte;
+use kilyte\Application;
+use kilyte\Model;
 
 class LoginForm extends Model
 {

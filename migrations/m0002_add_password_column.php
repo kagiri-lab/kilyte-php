@@ -1,6 +1,6 @@
 <?php
 
-use kilyte\core\Application;
+use kilyte\Application;
 
 class m0002_add_password_column {
     public function up()

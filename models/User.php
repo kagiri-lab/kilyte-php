@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use kilyte\core\UserModel;
+use kilyte\UserModel;
 
 class User extends UserModel
 {

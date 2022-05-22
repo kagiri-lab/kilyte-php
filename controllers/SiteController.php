@@ -5,11 +5,11 @@ namespace app\controllers;
 
 use app\models\LoginForm;
 use app\models\User;
-use kilyte\core\Controller;
-use kilyte\core\Application;
-use kilyte\core\middlewares\AuthMiddleware;
-use kilyte\core\Request;
-use kilyte\core\Response;
+use kilyte\Controller;
+use kilyte\Application;
+use kilyte\middlewares\AuthMiddleware;
+use kilyte\Request;
+use kilyte\Response;
 
 class SiteController extends Controller
 {
@@ -21,15 +21,13 @@ class SiteController extends Controller
     public function home()
     {
         return $this->render('home', [
-            'name' => 'TheCodeholic'
+            'name' => ''
         ]);
     }
 
     public function login(Request $request)
     {
-        echo '<pre>';
-        var_dump($request->getBody(), $request->getRouteParam('id'));
-        echo '</pre>';
+        
         $loginForm = new LoginForm();
         if ($request->getMethod() === 'post') {
             $loginForm->loadData($request->getBody());
@@ -38,7 +36,7 @@ class SiteController extends Controller
                 return;
             }
         }
-        $this->setLayout('auth');
+        //$this->setLayout('auth');
         return $this->render('login', [
             'model' => $loginForm
         ]);
@@ -56,7 +54,7 @@ class SiteController extends Controller
             }
 
         }
-        $this->setLayout('auth');
+        //$this->setLayout('auth');
         return $this->render('register', [
             'model' => $registerModel
         ]);

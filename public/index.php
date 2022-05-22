@@ -1,11 +1,11 @@
 <?php
 
 
-require_once __DIR__.'/../vendor/autoload.php';
 
+require_once __DIR__ . '/../vendor/autoload.php';
 use app\controllers\AboutController;
 use app\controllers\SiteController;
-use kilyte\core\Application;
+use kilyte\Application;
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();

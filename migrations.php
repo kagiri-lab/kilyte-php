@@ -1,6 +1,6 @@
 <?php
 
-use kilyte\core\Application;
+use kilyte\Application;
 
 require_once __DIR__.'/vendor/autoload.php';
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
