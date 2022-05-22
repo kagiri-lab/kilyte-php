@@ -1,9 +1,9 @@
 {
-    "name": "kagiri/kilyte-php",
+    "name": "kilyte/kilyte-php",
     "authors": [
         {
             "name": "Kagiri",
-            "email": "kagiri@kagiri.com"
+            "email": "kagiri@sharksight.co.ke"
         }
     ],
     "autoload": {
