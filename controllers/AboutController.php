@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use kilyte\Controller;
+use kilyte\core\Controller;
 
 class AboutController extends Controller
 {

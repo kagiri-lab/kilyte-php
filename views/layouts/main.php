@@ -34,7 +34,7 @@
             </ul>
             <?php
 
-            use kilytecore\Application;
+            use kilyte\core\Application;
 
             if (Application::isGuest()) : ?>
                 <ul class="navbar-nav ml-auto">

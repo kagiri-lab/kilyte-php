@@ -1,6 +1,6 @@
 <?php
 
-use kilytecore\form\Form;
+use kilyte\core\form\Form;
 
 ?>
 

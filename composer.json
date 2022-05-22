@@ -12,6 +12,6 @@
         }
     },
     "require": {
-        "vlucas/phpdotenv": "^5.4"
+        "kilyte/kilyte-php-core": "^1.0"
     }
 }

@@ -5,11 +5,11 @@ namespace app\controllers;
 
 use app\models\LoginForm;
 use app\models\User;
-use kilyte\Controller;
-use kilytecore\Application;
-use kilytecore\middlewares\AuthMiddleware;
-use kilytecore\Request;
-use kilytecore\Response;
+use kilyte\core\Controller;
+use kilyte\core\Application;
+use kilyte\core\middlewares\AuthMiddleware;
+use kilyte\core\Request;
+use kilyte\core\Response;
 
 class SiteController extends Controller
 {
