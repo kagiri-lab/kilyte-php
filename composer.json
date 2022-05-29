@@ -1,9 +1,9 @@
 {
-  "name": "kagiri/kilyte-php",
+  "name": "kilyte/kilyte-php",
   "authors": [
     {
       "name": "Kagiri",
-      "email": "kagiri@kagiri.com"
+      "email": "kagiri@sharksight.co.ke"
     }
   ],
   "autoload": {
@@ -12,7 +12,6 @@
     }
   },
   "require": {
-    "vlucas/phpdotenv": "^5.4",
-    "kilyte/kilyte-php-core": "^1.0"
+    "vlucas/phpdotenv": "^5.4"
   }
 }

@@ -3,3 +3,4 @@ core
 vendor
 composer.lock
 .env
+/vendor/
