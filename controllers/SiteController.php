@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function login(Request $request)
     {
-        
+
         $loginForm = new LoginForm();
         if ($request->getMethod() === 'post') {
             $loginForm->loadData($request->getBody());
@@ -52,7 +52,6 @@ class SiteController extends Controller
                 Application::$app->response->redirect('/');
                 return 'Show success page';
             }
-
         }
         //$this->setLayout('auth');
         return $this->render('register', [
@@ -66,9 +65,11 @@ class SiteController extends Controller
         $response->redirect('/');
     }
 
-    public function contact()
+    public function contact(Request $request, Response $response)
     {
-        return $this->render('contact');
+        return $this->render('contact', [
+            'model' => ''
+        ]);
     }
 
     public function profile()

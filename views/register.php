@@ -22,30 +22,28 @@ $this->title = "Register - KiLyte";
         </header>
 
 
-        <div class="row gy-4">
-            <div class="col-lg-4">
-            </div>
-
-            <div class="col-lg-4 align-center">
-                <div class="row gy-4">
+        <div class="row gy-4 align-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-6">
                     <?php $form = Form::begin('', 'post') ?>
-                    <div class="row">
-                        <div class="col">
-                            <?php echo $form->field($model, 'firstname') ?>
+                    <div class="row gy-4">
+                        <div class="row">
+                            <div class="col">
+                                <?php echo $form->field($model, 'firstname') ?>
+                            </div>
+                            <div class="col">
+                                <?php echo $form->field($model, 'lastname') ?>
+                            </div>
                         </div>
-                        <div class="col">
-                            <?php echo $form->field($model, 'lastname') ?>
+                        <?php echo $form->field($model, 'email') ?>
+                        <?php echo $form->field($model, 'password')->passwordField() ?>
+                        <?php echo $form->field($model, 'passwordConfirm')->passwordField() ?>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary">Submit</button>
                         </div>
                     </div>
-                    <?php echo $form->field($model, 'email') ?>
-                    <?php echo $form->field($model, 'password')->passwordField() ?>
-                    <?php echo $form->field($model, 'passwordConfirm')->passwordField() ?>
-                    </br>
-                    <button class="btn btn-success">Submit</button>
                     <?php Form::end() ?>
                 </div>
-            </div>
-            <div class="col-lg-4">
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 .idea
-core
-vendor
+/core/
 composer.lock
 .env
 /vendor/

@@ -22,21 +22,19 @@ $this->title = "Login - KiLyte";
         </header>
 
 
-        <div class="row gy-4">
-            <div class="col-lg-4">
-            </div>
-
-            <div class="col-lg-4 align-center">
-                <div class="row gy-4">
+        <div class="row gy-4 align-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-6">
                     <?php $form = Form::begin('', 'post') ?>
-                    <?php echo $form->field($model, 'email') ?>
-                    <?php echo $form->field($model, 'password')->passwordField() ?>
-                    </br>
-                    <button class="btn btn-success">Submit</button>
+                    <div class="row gy-4">
+                        <?php echo $form->field($model, 'email') ?>
+                        <?php echo $form->field($model, 'password')->passwordField() ?>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
                     <?php Form::end() ?>
                 </div>
-            </div>
-            <div class="col-lg-4">
             </div>
         </div>
     </div>
