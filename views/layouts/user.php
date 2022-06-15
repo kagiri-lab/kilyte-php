@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{title}}</title>
+    <title><?= $this->title ?></title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -29,9 +29,6 @@
     <!-- Template Main CSS File -->
     <link href="/assets/user/css/style.css" rel="stylesheet">
 
-
-
-
 </head>
 
 
@@ -40,8 +37,8 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
-            <a href="{{primary-url}}/user" class="logo d-flex align-items-center">
-                <img src="{{primary-url}}/assets/default/img/logo.png" alt="" />
+            <a href="/user" class="logo d-flex align-items-center">
+                <img src="/assets/default/img/logo.png" alt="" />
                 <span class="d-none d-lg-block">{{site-name}}</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -50,7 +47,17 @@
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-                {{user-signed-in}}
+                <?php
+
+                use kilyte\Application;
+
+                if (Application::isGuest()) : ?>
+                    <li><a class="nav-link" href="/login">Login</a></li>
+                    <li><a class="nav-link" href="/register">Register</a></li>
+                <?php else : ?>
+                    <li><a class="nav-link" href="/user/profile"><?php echo Application::$app->user->getDisplayName() ?></a></li>
+                    <li><a class="nav-link" href="/logout">Logout</a></li>
+                <?php endif; ?>
                 <!-- End Profile Nav -->
             </ul>
         </nav>
@@ -59,26 +66,40 @@
     <!-- End Header -->
 
 
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="./">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/user/profile">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/user/all">
+                    <i class="bi bi-person"></i>
+                    <span>All Users</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
     <main id="main" class="main">
-        <div class="pagetitle">
-            <h1>{{page-title}}</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{primary-url}}/user">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active">{{page-title}}</li>
-                </ol>
-            </nav>
-        </div>
-        <!-- End Page Title -->
-        {{section}}
+        {{content}}
     </main>
     <!-- End #main -->
-
-
-
-
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

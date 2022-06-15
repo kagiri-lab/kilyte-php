@@ -2,85 +2,27 @@
 
 namespace app\controllers;
 
-
-use app\models\LoginForm;
-use app\models\User;
 use kilyte\Controller;
-use kilyte\Application;
 use kilyte\middlewares\AuthMiddleware;
-use kilyte\Request;
-use kilyte\Response;
 
 class SiteController extends Controller
 {
-    public function __construct()
+
+    public function siteIndex()
     {
-        $this->registerMiddleware(new AuthMiddleware(['profile']));
+        $this->setLayout('main');
+        return $this->render([], 'main.home');
     }
 
-    public function home()
+    public function contact()
     {
-        return $this->render('home', [
-            'name' => ''
-        ]);
+        $this->setLayout('main');
+        return $this->render([], 'main.contact');
     }
 
-    public function login(Request $request)
+    public function about()
     {
-
-        $loginForm = new LoginForm();
-        if ($request->getMethod() === 'post') {
-            $loginForm->loadData($request->getBody());
-            if ($loginForm->validate() && $loginForm->login()) {
-                Application::$app->response->redirect('/');
-                return;
-            }
-        }
-        //$this->setLayout('auth');
-        return $this->render('login', [
-            'model' => $loginForm
-        ]);
-    }
-
-    public function register(Request $request)
-    {
-        $registerModel = new User();
-        if ($request->getMethod() === 'post') {
-            $registerModel->loadData($request->getBody());
-            if ($registerModel->validate() && $registerModel->save()) {
-                Application::$app->session->setFlash('success', 'Thanks for registering');
-                Application::$app->response->redirect('/');
-                return 'Show success page';
-            }
-        }
-        //$this->setLayout('auth');
-        return $this->render('register', [
-            'model' => $registerModel
-        ]);
-    }
-
-    public function logout(Request $request, Response $response)
-    {
-        Application::$app->logout();
-        $response->redirect('/');
-    }
-
-    public function contact(Request $request, Response $response)
-    {
-        return $this->render('contact', [
-            'model' => ''
-        ]);
-    }
-
-    public function profile()
-    {
-        return $this->render('profile');
-    }
-
-    public function profileWithId(Request $request)
-    {
-        echo '<pre>';
-        var_dump($request->getBody());
-        echo '</pre>';
+        $this->setLayout('main');
+        return $this->render([], 'main.about');
     }
 }

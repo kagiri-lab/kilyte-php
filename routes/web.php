@@ -3,7 +3,9 @@
 namespace app\routes;
 
 use app\controllers\AboutController;
+use app\controllers\AuthController;
 use app\controllers\SiteController;
+use app\controllers\UserController;
 use kilyte\Application;
 
 class Web
@@ -19,16 +21,34 @@ class Web
 
     public function load()
     {
-        $this->app->router->get('/', [SiteController::class, 'home']);
-        $this->app->router->get('/register', [SiteController::class, 'register']);
-        $this->app->router->post('/register', [SiteController::class, 'register']);
-        $this->app->router->get('/login', [SiteController::class, 'login']);
-        $this->app->router->get('/login/{id}', [SiteController::class, 'login']);
-        $this->app->router->post('/login', [SiteController::class, 'login']);
-        $this->app->router->get('/logout', [SiteController::class, 'logout']);
-        $this->app->router->get('/contact', [SiteController::class, 'contact']);
-        $this->app->router->get('/about', [AboutController::class, 'index']);
-        $this->app->router->get('/profile', [SiteController::class, 'profile']);
-        $this->app->router->get('/profile/{id:\d+}/{username}', [SiteController::class, 'login']);
+
+        $this->app->router->get(SiteController::class, [
+            '/' => 'siteIndex',
+            '/contact' => 'contact',
+            '/about' => 'about'
+        ]);
+
+        $this->app->router->post(AuthController::class, [
+            '/login' => 'login',
+            '/register' => 'register'
+        ]);
+
+        $this->app->router->get(AuthController::class, [
+            '/login' => 'login',
+            '/logout' => 'logout',
+            '/register' => 'register'
+        ]);
+
+        $this->app->router->get(UserController::class, [
+            '/' => 'userIndex',
+            '/profile' => 'profile',
+            '/profile/{username}' => 'profileWithId',
+            '/all' => 'all_users',
+            '/all/{id}' => 'edit'
+        ], 'user', 'auth');
+
+        $this->app->router->post(UserController::class, [
+            '/all/{id}' => 'edit'
+        ], 'user', 'auth');
     }
 }

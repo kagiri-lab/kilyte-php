@@ -36,12 +36,12 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="/" class="logo d-flex align-items-center">
                 <img src="/assets/default/img/logo.png" alt="" />
-                <span>KiLyte</span>
+                <span>{{site-name}}</span>
             </a>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/about">About Us</a></li>
                     <li><a class="nav-link scrollto" href="/contact">Contact Us</a></li>
 
@@ -53,7 +53,7 @@
                         <li><a class="nav-link" href="/login">Login</a></li>
                         <li><a class="nav-link" href="/register">Register</a></li>
                     <?php else : ?>
-                        <li><a class="nav-link" href="/profile">Profile</a></li>
+                        <li><a class="nav-link" href="/user/profile">Profile</a></li>
                         <li>
                             <a class="nav-link" href="/logout">
                                 <?php echo Application::$app->user->getDisplayName() ?> (Logout)
@@ -78,7 +78,7 @@
                     <div class="col-lg-5 col-md-12 footer-info">
                         <a href="./" class="logo d-flex align-items-center">
                             <img src="/assets/default/img/logo.png" alt="" />
-                            <span>KiLyte</span>
+                            <span>{{site-name}}</span>
                         </a>
                         <p>
                             We offer modern solutions for growing your business

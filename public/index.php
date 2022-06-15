@@ -5,7 +5,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../core/vendor/autoload.php';
 
 use app\routes\API;
+use app\routes\Migrate;
 use app\routes\Web;
+
 use kilyte\Application;
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
@@ -27,5 +29,6 @@ $app = new Application(dirname(__DIR__), $config);
 
 $webroutes = new Web($app);
 $apiroutes = new API($app);
+$migration = new Migrate($app);
 
 $app->run();
