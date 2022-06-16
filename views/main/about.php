@@ -1,4 +1,4 @@
-<?php $this->title = "About Us" ?>
+<?php $this->title = "About Us - {{site-name}}" ?>
 
 <!-- ======= Breadcrumbs ======= -->
 <section class="breadcrumbs">

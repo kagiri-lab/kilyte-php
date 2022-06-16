@@ -1,4 +1,4 @@
-<?php $this->title = "KiLyte" ?>
+<?php $this->title = "{{site-name}}" ?>
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">

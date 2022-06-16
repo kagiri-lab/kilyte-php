@@ -2,7 +2,7 @@
 
 use kilyte\form\Form;
 
-$this->title = "Contact" ?>
+$this->title = "Contact - {{site-name}}" ?>
 
 <!-- ======= Breadcrumbs ======= -->
 <section class="breadcrumbs">
