@@ -10,18 +10,7 @@ use app\routes\Web;
 
 use kilyte\Application;
 
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
-$config = [
-    'userClass' => \app\models\User::class,
-    'db' => [
-        'dsn' => $_ENV['DB_DSN'],
-        'user' => $_ENV['DB_USER'],
-        'password' => $_ENV['DB_PASSWORD'],
-    ]
-];
-
-$app = new Application(dirname(__DIR__), $config);
+$app = new Application(dirname(__DIR__));
 
 // $app->on(Application::EVENT_BEFORE_REQUEST, function () {
 //     // echo "Before request from second installation";

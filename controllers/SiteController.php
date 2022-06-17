@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use kilyte\Controller;
-use kilyte\middlewares\AuthMiddleware;
 
 class SiteController extends Controller
 {
