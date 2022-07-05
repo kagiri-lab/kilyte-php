@@ -1,7 +1,9 @@
 <?php
 
-$this->title = 'Profile - {{site-name}}';
+use kilyte\controls\Block;
 
+$this->title = 'Profile - {{site-name}}';
+$blockView = new Block();
 ?>
 
 <div class="pagetitle">
@@ -60,13 +62,12 @@ $this->title = 'Profile - {{site-name}}';
           <div class="tab-content pt-2">
             <div class="tab-pane fade show active profile-overview" id="profile-overview">
               <div class="row">
-                <div class="col-lg-3 col-md-4 label">Full Name</div>
-                <div class="col-lg-9 col-md-8"><?= $model->firstname . ' ' . $model->lastname ?></div>
+                <?= $blockView->cardBlock($model, 'firstname', ['size' => 2]) ?>
+                <?= $blockView->cardBlock($model, 'lastname', ['size' => 2]) ?>
               </div>
 
               <div class="row">
-                <div class="col-lg-3 col-md-4 label">Email</div>
-                <div class="col-lg-9 col-md-8"><?= $model->email ?></div>
+                <?= $blockView->cardBlock($model, 'email') ?>
               </div>
             </div>
 
@@ -76,7 +77,7 @@ $this->title = 'Profile - {{site-name}}';
                 <div class="row mb-3">
                   <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                   <div class="col-md-8 col-lg-9">
-                    <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $model->firstname.' '.$model->lastname ?>" />
+                    <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $model->firstname . ' ' . $model->lastname ?>" />
                   </div>
                 </div>
 
