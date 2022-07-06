@@ -17,7 +17,6 @@
             if (strtolower($debug) == 'true') {
                 echo "<hr />";
                 foreach ($error['trace'] as $rs) {
-                    // print_r($rs);
                     $file = $rs['file'];
                     $line = $rs['line'];
                     $func = $rs['function'];
