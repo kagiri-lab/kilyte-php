@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../core/vendor/autoload.php';
 
 use app\routes\API;
+use app\routes\Dashboard;
 use app\routes\Migrate;
 use app\routes\Web;
 
@@ -18,6 +19,7 @@ $app = new Application(dirname(__DIR__));
 
 $webroutes = new Web($app);
 $apiroutes = new API($app);
+$dashboard = new Dashboard($app);
 $migration = new Migrate($app);
 
 $app->run();

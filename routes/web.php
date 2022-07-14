@@ -2,9 +2,8 @@
 
 namespace app\routes;
 
-use app\controllers\AboutController;
 use app\controllers\AuthController;
-use app\controllers\SiteController;
+use app\controllers\site\SiteController;
 use app\controllers\UserController;
 use kilyte\Application;
 

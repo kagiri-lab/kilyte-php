@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function userIndex()
     {
-        $this->setLayout('user');
+        $this->setLayout('site.user');
         return $this->render(
             ['model' => ''],
             'user.home'
@@ -24,7 +24,7 @@ class UserController extends Controller
     public function profile(Request $request)
     {
         $user = Application::$app->user;
-        $this->setLayout('user');
+        $this->setLayout('site.user');
         return $this->render(
             ['model' => $user],
             'user.profile.summary'
@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function all_users(Request $request)
     {
-        $this->setLayout('user');
+        $this->setLayout('site.user');
         $user = User::getAll(['id', 'firstname', 'lastname', 'email', 'status', 'created_at']);
         return $this->render(
             ['model' => $user],
@@ -44,7 +44,7 @@ class UserController extends Controller
     public function edit(Request $request, Response $response)
     {
         $id = $request->getRouteParam('id');
-        $this->setLayout('user');
+        $this->setLayout('site.user');
         if ($request->isPost()) {
             print_r($request->get());
             $user = new User;
