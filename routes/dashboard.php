@@ -10,10 +10,10 @@ class Dashboard{
 
     public function __construct(Application $application)
     {
-        $this->route($application->router);
+        $this->register($application->router);
     }
 
-    public function route($route)
+    public function register($route)
     {
         $route->get(DashboardController::class, [
             '/' => 'index',

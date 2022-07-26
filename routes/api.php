@@ -11,24 +11,20 @@ use UserAPIController;
 
 class API
 {
-
-    private Application $app;
-
     public function __construct(Application $application)
     {
-        $this->app = $application;
-        $this->load();
+        $this->register($application->router);
     }
 
-    private function load()
+    private function register($router)
     {
 
-        $this->app->router->get(AuthController::class, [
+        $router->get(AuthController::class, [
             '/' => 'index',
             'users/list/{page}' => 'listAll'
         ], 'api/');
 
-        $this->app->router->post(AuthController::class, [
+        $router->post(AuthController::class, [
             '/' => 'index',
             'login' => 'login',
             'register' => 'register',
@@ -36,7 +32,7 @@ class API
         ], 'api/');
 
 
-        $this->app->router->post(UserController::class, [
+        $router->post(UserController::class, [
             'profile' => 'profile',
             'profile/{username}' => 'profileWithId'
         ], 'api/user');

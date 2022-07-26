@@ -7,17 +7,14 @@ use kilyte\database\Migration;
 
 class Migrate{
 
-    private Application $app;
-
     public function __construct(Application $application)
     {
-        $this->app = $application;
-        $this->register();
+        $this->register($application->router);
     }
 
-    public function register(){
+    public function register($router){
 
-        $this->app->router->get(Migration::class, [
+        $router->get(Migration::class, [
             'tables' => 'apply'
         ]);
     }

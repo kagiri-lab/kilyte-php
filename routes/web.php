@@ -9,36 +9,33 @@ use kilyte\Application;
 
 class Web
 {
-
-    private Application $app;
-
+    
     public function __construct(Application $application)
     {
-        $this->app = $application;
-        $this->load();
+        $this->register($application->router);
     }
 
-    public function load()
+    public function register($router)
     {
 
-        $this->app->router->get(SiteController::class, [
+        $router->get(SiteController::class, [
             '/' => 'siteIndex',
             '/contact' => 'contact',
             '/about' => 'about'
         ]);
 
-        $this->app->router->post(AuthController::class, [
+        $router->post(AuthController::class, [
             '/login' => 'login',
             '/register' => 'register'
         ]);
 
-        $this->app->router->get(AuthController::class, [
+        $router->get(AuthController::class, [
             '/login' => 'login',
             '/logout' => 'logout',
             '/register' => 'register'
         ]);
 
-        $this->app->router->get(UserController::class, [
+        $router->get(UserController::class, [
             '/' => 'userIndex',
             '/profile' => 'profile',
             '/profile/{username}' => 'profileWithId',
@@ -46,7 +43,7 @@ class Web
             '/all/{id}' => 'edit'
         ], 'user', 'auth');
 
-        $this->app->router->post(UserController::class, [
+        $router->post(UserController::class, [
             '/all/{id}' => 'edit'
         ], 'user', 'auth');
     }
