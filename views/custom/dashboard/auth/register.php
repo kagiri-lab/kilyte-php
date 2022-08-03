@@ -11,11 +11,9 @@
                                     </div>
                                     <!--/.bg-holder-->
 
-                                    <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="/">{{site-name}}</a>
-                                        <p class="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
-                                    </div>
                                 </div>
                                 <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
+                                    <a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="/">{{site-name}}</a>
                                     <p class="pt-3 text-white">Have an account?<br><a class="btn btn-outline-light mt-2 px-4" href="/admin/login">Log In</a></p>
                                 </div>
                             </div>
@@ -48,14 +46,7 @@
                                             <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Register</button>
                                         </div>
                                     </div>
-                                    <div class="position-relative mt-4">
-                                        <hr class="bg-300" />
-                                        <div class="divider-content-center">or register with</div>
-                                    </div>
-                                    <div class="row g-2 mt-2">
-                                        <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
-                                        <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
