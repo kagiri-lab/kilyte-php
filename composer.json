@@ -1,5 +1,6 @@
 {
   "name": "kilyte/kilyte-php",
+  "type": "project",
   "authors": [
     {
       "name": "Kagiri",
@@ -11,6 +12,5 @@
       "app\\": "./"
     }
   },
-  "require": {
-  }
+  "require": {}
 }
