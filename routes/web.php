@@ -9,7 +9,7 @@ use kilyte\Application;
 
 class Web
 {
-    
+
     public function __construct(Application $application)
     {
         $this->register($application->router);
@@ -21,7 +21,8 @@ class Web
         $router->get(SiteController::class, [
             '/' => 'siteIndex',
             '/contact' => 'contact',
-            '/about' => 'about'
+            '/about' => 'about',
+            '/testSql' => 'testSql'
         ]);
 
         $router->post(AuthController::class, [

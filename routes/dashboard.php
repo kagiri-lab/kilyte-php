@@ -6,7 +6,8 @@ use app\controllers\dashboard\AuthController;
 use app\controllers\dashboard\DashboardController;
 use kilyte\Application;
 
-class Dashboard{
+class Dashboard
+{
 
     public function __construct(Application $application)
     {
@@ -17,7 +18,8 @@ class Dashboard{
     {
         $route->get(DashboardController::class, [
             '/' => 'index',
-        ], 'admin', 'auth');
+            '/uploader' => 'uploadTest'
+        ], 'admin');
 
         $route->get(AuthController::class, [
             '/login' => 'login',
@@ -35,6 +37,10 @@ class Dashboard{
             '/forgot-password' => 'forgotPassword',
             '/confirm-email' => 'confirmEmail',
             '/logout' => 'Logout'
+        ], 'admin');
+
+        $route->post(DashboardController::class, [
+            '/uploader' => 'uploadTest'
         ], 'admin');
     }
 }
