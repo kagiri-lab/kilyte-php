@@ -34,6 +34,11 @@ class User extends UserModel
         ];
     }
 
+    public function columnType()
+    {
+        return [];
+    }
+
     public function rules()
     {
         return [
