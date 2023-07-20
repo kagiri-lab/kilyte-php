@@ -19,13 +19,13 @@ class DashboardController extends Controller
     {
         $this->setLayout('dashboard.main');
         if ($request->isPost()) {
-            $upload = ImageUploader::execute();
-            print_r($upload);
-            // if (!$upload->check()) {
-            //     print_r($upload->get_error());
-            // } else {
-            //     print_r($upload->get_name());
-            // }
+            // $upload = ImageUploader::execute();
+            // print_r($upload);
+            // // if (!$upload->check()) {
+            // //     print_r($upload->get_error());
+            // // } else {
+            // //     print_r($upload->get_name());
+            // // }
         }
         return $this->render([], 'dashboard.uploader');
     }

@@ -9,7 +9,6 @@ use kilyte\Application;
 use kilyte\Controller;
 use kilyte\Http\Request;
 use kilyte\http\Response;
-use kilyte\middlewares\AuthMiddleware;
 use kilyte\security\StringEncrypt;
 use kilyte\security\Token;
 
@@ -28,7 +27,8 @@ class AuthController extends Controller
             $loginForm->loadData($request->get());
             if ($loginForm->validate() && $loginForm->login()) {
                 if (Application::$app->router->isAPI) {
-                    $user = Application::$app->user;
+                    $user = $this->user();
+                    /** @var UserModel $user */
                     $encrypt = new StringEncrypt;
                     $identifier = $encrypt->openssl_encrypt("{$user->id}.{$user->firstname}");
                     return ["token" => $this->generateToken(), "identifier" => $identifier];
@@ -77,7 +77,7 @@ class AuthController extends Controller
 
         $user = new User;
         return $this->render(
-            ['model' => $user->has(['email' => 'skylarmuthoni@gmail.co'])] //getPage(['id', 'firstname', 'lastname', 'email'], $page)]
+            ['model' => $user->has(['email' => ''])] //getPage(['id', 'firstname', 'lastname', 'email'], $page)]
         );
     }
 

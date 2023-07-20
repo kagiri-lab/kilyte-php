@@ -32,9 +32,10 @@ class API
         ], 'api/');
 
 
-        $router->post(UserController::class, [
+        $router->get(UserController::class, [
             'profile' => 'profile',
-            'profile/{username}' => 'profileWithId'
-        ], 'api/user');
+            'profile/{username}' => 'profileWithId',
+            'hey' => 'hey'
+        ], 'api/user/');
     }
 }

@@ -12,18 +12,23 @@ use kilyte\middlewares\AuthMiddleware;
 class UserController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware());
+        $this->setLayout('site.user');
+    }
+
     public function userIndex()
     {
-        $this->setLayout('site.user');
         return $this->render(
             ['model' => ''],
             'user.home'
         );
     }
 
-    public function profile(Request $request)
+    public function profile()
     {
-        $user = Application::$app->user;
+        $user = $this->user();
         $this->setLayout('site.user');
         return $this->render(
             ['model' => $user],
@@ -31,7 +36,7 @@ class UserController extends Controller
         );
     }
 
-    public function all_users(Request $request)
+    public function all_users()
     {
         $this->setLayout('site.user');
         $user = User::getAll(['id', 'firstname', 'lastname', 'email', 'status', 'created_at']);
